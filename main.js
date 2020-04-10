@@ -11,6 +11,7 @@ let appData = {
     savings: false,
 }
 
+<<<<<<< HEAD
 for (let i = 0; i < 2; i++) {
     while (true) {
         let a = prompt('Enter mandatory expence item this Month', ''),
@@ -41,3 +42,12 @@ if (appData.moneyPerDay < 100) {
     console.log('Error');    
 }
 
+=======
+for (let i = 0; i < 2; i ++) {
+    let qtnMandatory = prompt('Enter mandatory expence item this Month');
+    let qtnHowMuch = prompt('What would be the cost?');
+    appData.expenses[qtnMandatory] = qtnHowMuch;
+}
+
+alert(appData.budget/30);
+>>>>>>> master
