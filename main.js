@@ -73,9 +73,26 @@ let appData = {
     },
     chooseIncome: function () {
         let items = prompt('What will bring the additional income? (Please separate using coma (,))', '');
+        while ((typeof(items)) !== 'string' || (typeof(items)) === 'number' || items == '' || items == null || !isNaN(items)){
+            items = prompt('What will bring the additional income? (Please separate using coma (,))', '');
+        } 
         appData.income = items.split(', ');
         appData.income.push(prompt('Maybe anything else?',''));
         appData.income.sort();
+        alert('The way of additional income: \n');
+        appData.income.forEach(function(item, i, arrNameIncome) {
+            alert(`${i+1}: ${item}`);
+        });        
+    },
+    getAllappDataItems: function () {
+        console.log('Our Programm includings:');        
+        for (const key in appData) {
+            console.log(`${key}: ${appData[key]}`);            
+        }
     }
 };
+
+appData.getAllappDataItems();
+
+
 
